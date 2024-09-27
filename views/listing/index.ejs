@@ -2,33 +2,24 @@
 <style>
   .filters{
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
+    overflow-x: auto;
+  }
+  .filters::-webkit-scrollbar{
+    width: 0;
   }
   .filter{
     text-align: center;
     margin-right: 2rem;
+    cursor: pointer;
     margin-top: 1rem;
     opacity: 0.7;
   }
-  .filter i{
-    font-size: 1rem;
-  }
   .filter p{
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
   .filter:hover{
     opacity: 1;
-  }
-  .tax-info{
-    display: none;
-  }
-  .tax-btn{
-    border: 1px solid black;
-    border-radius: 1rem;
-    padding: 1rem;
-    margin-left: auto;
-    opacity: 0.9;
   }
 </style>
 <div class="filters">
@@ -37,8 +28,12 @@
       <p>Trending</p>
   </div>
   <div class="filter">
+    <i class="fa-solid fa-dungeon"></i><br>
+      <p>Caves</p>
+  </div>
+  <div class="filter">
     <i class="fa-solid fa-mountain-sun"></i><br>
-      <p>Hill Station</p>
+      <p>Hill station</p>
   </div>
   <div class="filter">
     <i class="fa-solid fa-igloo"></i><br>
@@ -64,12 +59,38 @@
     <i class="fa-solid fa-landmark-dome"></i><br>
       <p>Historical House</p>
   </div>
-  <div class="tax-btn">
-    <div class="form-check form-switch form-check-reverse">
-        <input class="form-check-input" type="checkbox" id="flexSwitchCheckReverse">
-        <label class="form-check-label" for="flexSwitchCheckReverse">Display total after tax</label>
-    </div>
-</div>
+  <div class="filter">
+    <i class="fa-solid fa-caravan"></i><br>
+      <p>Camper van</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-snowflake"></i><br>
+      <p>Arctic</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-archway"></i><br>
+      <p>Hanoks</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-hotel"></i><br>
+      <p>Mansions</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-campground"></i><br>
+      <p>Camping</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-mug-hot"></i><br>
+      <p>Bed & Breakfasts</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-key"></i><br>
+      <p>New</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-golf-ball-tee"></i><br>
+      <p>Golfing</p>
+  </div>
 </div>
     <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1 row-cols-xs-1">
         <% for(let listing of allListings){ %>
@@ -81,7 +102,6 @@
                   <p class="card-text">
                     <b><%=listing.title %> </b> <br>
                     &#8377 <%= listing.price.toLocaleString("en-IN") %> / night
-                    <i class="tax-info">&nbsp; &nbsp;+18% GST</i>
                   </p>
                 </div>
             </div>
